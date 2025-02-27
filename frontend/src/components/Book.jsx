@@ -1,13 +1,10 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import cover1 from '../Assets/Cover1.jpeg'
-import { Apple, ArrowDownToLine, Heart, ShoppingCart, IndianRupee} from 'lucide-react'
-import bookData from './Data'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { UserContext } from '../ContextApi/UserContext'
 import axios from 'axios'
-import {ToastContainer, toast, Bounce} from 'react-toastify'
+import {ToastContainer, toast} from 'react-toastify'
 
 export default function Book() {
     

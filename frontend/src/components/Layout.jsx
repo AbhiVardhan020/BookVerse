@@ -4,8 +4,6 @@ import { useContext } from 'react'
 import {UserContext} from '../ContextApi/UserContext'
 import Footer from './Footer';
 import Header from './Header';
-import {ToastContainer, toast, Bounce} from 'react-toastify'
-
 
 export default function Layout() {
 

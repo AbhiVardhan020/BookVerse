@@ -1,5 +1,4 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { Book } from 'lucide-react'
 import AboutAsset1 from '../Assets/AboutAsset1.jpg'
 import AboutAsset2 from '../Assets/AboutAsset2.jpg'
