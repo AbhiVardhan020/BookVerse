@@ -52,7 +52,7 @@ export default function Register({baseUrl}) {
         value={data.name}
         onChange={changeFxn}
         className="form-control required"
-        placeholder="Enter your username"
+        placeholder="Enter your name"
         />
 
         <div className="fs-5 text-start">Username</div>
