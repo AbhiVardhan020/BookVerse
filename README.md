@@ -1,92 +1,88 @@
-BookVerse
+# 📖 BookVerse
 
-BookVerse is a dynamic and user-friendly online bookstore that allows users to explore, search, and purchase books with ease. It features seamless navigation, efficient search functionality, and secure payments via Stripe.
+BookVerse is a highly dynamic and user-friendly online bookstore that provides seamless searching, navigation, and a smooth shopping experience. The platform allows users to browse, purchase, and manage books with ease.
 
-Features
+## 🚀 Features
 
-Dynamic and user-friendly interface
+- 🔍 **Advanced Search & Navigation** – Easily find books using smart filtering and search functionalities.
+- 🎨 **Dynamic UI** – A modern and interactive user interface.
+- 🔐 **Secure Authentication** – User authentication with JWT.
+- 📚 **Rolling Gallery** – Visually appealing book display.
+- 🌐 **Responsive Design** – Optimized for all screen sizes.
 
-Efficient search and navigation
+## 🛠️ Tech Stack
 
-Secure payment integration with Stripe
+### Frontend:
+- React.js
+- React Router DOM
+- Lucide React (Icons)
+- React Toastify (Notifications)
+- React Select
+- React Bootstrap
+- Rolling Gallery
+- Axios
 
-JWT-based authentication
+### Backend:
+- Express.js
+- CORS
+- Mongoose (MongoDB)
+- JWT (Authentication)
+- Stripe (Payments)
 
-Responsive design
+## 🏗️ Installation & Setup
 
-Tech Stack
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>=14.x)
+- MongoDB
 
-Frontend
+### Steps to Run the Project
 
-React.js
+#### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/AbhiVardhan020/BookVerse.git
+cd bookstore
+```
 
-React Router DOM
+#### 2️⃣ Install Dependencies
 
-Lucide React
-
-React Toastify
-
-React Select
-
-React Bootstrap
-
-Rolling Gallery
-
-Axios
-
-Backend
-
-Express.js
-
-Cors
-
-Mongoose
-
-JWT Authentication
-
-Stripe for Payments
-
-Installation & Setup
-
-Prerequisites
-
-Ensure you have the following installed on your system:
-
-Node.js
-
-MongoDB
-
-npm or yarn
-
-Clone the Repository
-
-git clone https://github.com/yourusername/bookverse.git
-cd bookverse
-
-Backend Setup
-
-cd backend
-npm install
-npm start
-
-Frontend Setup
-
+##### Frontend:
+```sh
 cd frontend
 npm install
 npm start
+```
 
-Running the Project
+##### Backend:
+```sh
+cd backend
+npm install
+npm start
+```
 
-Start the backend server: npm start in the backend directory.
+#### 3️⃣ Configure Environment Variables
+Create a `.env` file in the backend folder and add:
+```env
+PORT=3001
+STRIPE_SECRET_KEY=your_stripe_secret_key
+```
 
-Start the frontend server: npm start in the frontend directory.
+#### 4️⃣ Start the Development Server
+Run the frontend and backend servers:
+```sh
+# Start backend
+cd backend
+npm start
 
-Open your browser and go to http://localhost:3000/ to access BookVerse.
+# Start frontend
+cd frontend
+npm start
+```
 
-Contributing
+#### 5️⃣ Open the Application
+Visit: `http://localhost:3000`
 
-Feel free to fork this project and contribute! Pull requests are welcome.
+---
 
-License
-
-This project is licensed under the MIT License.
+### 📬 Contributions & Support
+Feel free to fork, contribute, and open issues if you have suggestions. Happy coding! 🚀
