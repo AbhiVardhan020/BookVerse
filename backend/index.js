@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/BookStore');
 app.use(express.json());
 
 const allowedOrigins = [
-  "https://bookverse-jade.vercel.app", // Replace with your actual frontend Vercel URL
+  "https://bookverse-jade.vercel.app/", // Replace with your actual frontend Vercel URL
   "http://localhost:3000" // Allow local development
 ];
 
