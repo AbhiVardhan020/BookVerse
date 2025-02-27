@@ -47,7 +47,7 @@ export default function Register({baseUrl}) {
 
         <div className="fs-5 text-start">Name</div>
         <input
-        name="username"
+        name="name"
         type="text"
         value={data.name}
         onChange={changeFxn}
