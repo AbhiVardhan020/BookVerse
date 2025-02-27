@@ -6,7 +6,7 @@ import { UserContext } from '../ContextApi/UserContext'
 import axios from 'axios'
 import { toast, ToastContainer } from 'react-toastify'
 
-export default function Verify() {
+export default function Verify({baseUrl}) {
 
     const navigate = useNavigate()
 
@@ -19,7 +19,7 @@ export default function Verify() {
     
     const verifyPayment = async ()=>{
         try {
-            const res = await axios.post('http://localhost:3001/verifyStripe', {orderId, success}, {headers: {token}})
+            const res = await axios.post(`${baseUrl}verifyStripe`, {orderId, success}, {headers: {token}})
             if(res.data.success){
                 toast('Payment verified and order placed')
                 navigate('/bookverse/orders')

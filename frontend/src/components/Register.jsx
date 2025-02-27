@@ -2,7 +2,7 @@ import React from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-export default function Register() {
+export default function Register({baseUrl}) {
 
   const [data, setData] = React.useState({
     name: '',
@@ -27,7 +27,7 @@ export default function Register() {
   const handleSubmit = async (e)=>{
     console.log(data)
     e.preventDefault()
-    axios.post('http://localhost:3001/register', {data})
+    axios.post(`${baseUrl}register`, {data})
       .then(res=>{
         console.log(res.data)
         alert(res.data.message)

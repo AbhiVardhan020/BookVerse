@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import {UserContext} from '../ContextApi/UserContext'
 import { useNavigate } from 'react-router-dom'
 
-export default function Login() {
+export default function Login({baseUrl}) {
 
     const [data, setData] = React.useState({
         username: '',
@@ -27,7 +27,7 @@ export default function Login() {
 
     const handleSubmit = async (e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/auth/login', {data})
+        axios.post(`${baseUrl}auth/login`, {data})
             .then(res=>{
                 console.log(res.data)
                 if(res.data.success){

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../ContextApi/UserContext'
 
-export default function Profile() {
+export default function Profile({baseUrl}) {
 
     const {userId, username} = useContext(UserContext)
 
@@ -13,7 +13,7 @@ export default function Profile() {
 
     const getUserData = async ()=>{
         try {
-            axios.post('http://localhost:3001/getUser', {userId, username})
+            axios.post(`${baseUrl}getUser`, {userId, username})
                 .then(res=>{
                     console.log(res)
                     // console.log(res.user.username)

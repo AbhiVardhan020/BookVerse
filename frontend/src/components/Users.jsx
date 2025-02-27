@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import axios from 'axios'
 import { UserContext } from '../ContextApi/UserContext'
 
-export default function Users() {
+export default function Users({baseUrl}) {
 
   const [users, setUsers] = React.useState([])
   const [popover, setPopover] = React.useState(false)
@@ -10,7 +10,7 @@ export default function Users() {
 
   const getUsers = async()=>{
     try {
-      axios.post('http://localhost:3001/getUsers')
+      axios.post(`${baseUrl}getUsers`)
         .then(res=>{
           console.log(res.data)
           setUsers(res.data.users)
@@ -25,7 +25,7 @@ export default function Users() {
 
   const removeUser = async (userId)=>{
     try {
-      axios.post('http://localhost:3001/removeUser', {userId})
+      axios.post(`${baseUrl}removeUser`, {userId})
         .then(res=>{
             console.log(res.data)
             window.location.reload()

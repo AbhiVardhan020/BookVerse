@@ -35,6 +35,8 @@ const ScrollToTop = () => {
 
 function App() {
 
+  const baseUrl = 'http://localhost:3001/'
+
   const [username, setUsername] = React.useState('')
   const [token, setToken] = React.useState('')
   const [name, setName] = React.useState('')
@@ -64,22 +66,22 @@ function App() {
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          <Route path='/' element={ <Start /> } />
-          <Route path='/bookverse' element={ <Layout /> } >
-            <Route path='/bookverse' element={ <Home /> } />
-            <Route path='/bookverse/explore' element={ <Explore /> } >
-              <Route path='/bookverse/explore/' element={ <SearchResults input={input} /> } />
-              <Route path='/bookverse/explore/:bookName' element={ <Book /> } />
-              <Route path='/bookverse/explore/cart' element={ <Cart /> } />
+          <Route path='/' element={ <Start baseUrl={baseUrl} /> } />
+          <Route path='/bookverse' element={ <Layout baseUrl={baseUrl} /> } >
+            <Route path='/bookverse' element={ <Home baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/explore' element={ <Explore baseUrl={baseUrl} /> } >
+              <Route path='/bookverse/explore/' element={ <SearchResults input={input} baseUrl={baseUrl} /> } />
+              <Route path='/bookverse/explore/:bookName' element={ <Book baseUrl={baseUrl} /> } />
+              <Route path='/bookverse/explore/cart' element={ <Cart baseUrl={baseUrl} /> } />
             </Route>
-            <Route path='/bookverse/users' element={ <Users /> } />
-            <Route path='/bookverse/profile/:username' element={ <Profile /> } />
-            <Route path='/bookverse/about' element={ <AboutUs /> } />
-            <Route path='/bookverse/login' element={ <Login /> } />
-            <Route path='/bookverse/register' element={ <Register /> } />
-            <Route path='/bookverse/verify' element={ <Verify /> } />
-            <Route path='/bookverse/orders' element={ <Orders /> } />
-            <Route path='/bookverse/checkout' element={ <Checkout /> } />
+            <Route path='/bookverse/users' element={ <Users baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/profile/:username' element={ <Profile baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/about' element={ <AboutUs baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/login' element={ <Login baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/register' element={ <Register baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/verify' element={ <Verify baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/orders' element={ <Orders baseUrl={baseUrl} /> } />
+            <Route path='/bookverse/checkout' element={ <Checkout baseUrl={baseUrl} /> } />
           </Route>
           <Route path='/*' element={ <Layout /> } />
         </Routes>

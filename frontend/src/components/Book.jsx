@@ -6,7 +6,7 @@ import { UserContext } from '../ContextApi/UserContext'
 import axios from 'axios'
 import {ToastContainer, toast} from 'react-toastify'
 
-export default function Book() {
+export default function Book({baseUrl}) {
     
     
     const {username, userId, token} = useContext(UserContext)
@@ -85,7 +85,7 @@ export default function Book() {
       }, [])
 
     const addToCart = async ()=>{
-        axios.post('http://localhost:3001/cart/addToCart', {book: {...book, quantity}, username})
+        axios.post(`${baseUrl}cart/addToCart`, {book: {...book, quantity}, username})
             .then(res=>{
                 console.log(res.data)
                 toast(res.data.message)

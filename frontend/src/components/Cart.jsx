@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { Trash2 } from 'lucide-react';
 import 'reactjs-popup/dist/index.css';
 
-export default function Cart() {
+export default function Cart({baseUrl}) {
     const [cartData, setCartData] = useState([]);
     const [totalCost, setTotalCost] = useState(0);
 
@@ -23,7 +23,7 @@ export default function Cart() {
 
     const getCartData = async () => {
         try {
-            const res = await axios.post('http://localhost:3001/cart/getCartData', { userId });
+            const res = await axios.post(`${baseUrl}cart/getCartData`, { userId });
             setCartData(res.data.cartData||[]);
         } catch (error) {
             console.log(error.message);
@@ -32,7 +32,7 @@ export default function Cart() {
 
     const remove = async (bookId) => {
         try {
-            const res = await axios.post('http://localhost:3001/cart/removeFromCart', { bookId, userId, username });
+            const res = await axios.post(`${baseUrl}cart/removeFromCart`, { bookId, userId, username });
             setCartData(res.data.cartData|| []);
             toast(res.data.message);
         } catch (error) {

@@ -3,14 +3,14 @@ import { useContext } from 'react'
 import { UserContext } from '../ContextApi/UserContext'
 import axios from 'axios'
 
-export default function Orders() {
+export default function Orders({baseUrl}) {
 
   const {userId} = useContext(UserContext)
   const [orders, setOrders] = React.useState([])
 
   const getOrders = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/order/getOrders', { userId })
+      const response = await axios.post(`${baseUrl}order/getOrders`, { userId })
       console.log(response)
       if (response.data.success) {
         setOrders(response.data.orders)

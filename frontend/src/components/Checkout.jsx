@@ -4,7 +4,7 @@ import { UserContext } from '../ContextApi/UserContext';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 
-export default function Checkout() {
+export default function Checkout({baseUrl}) {
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -26,7 +26,7 @@ export default function Checkout() {
     const placeOrder = async () => {
         if (paymentMethod === 'stripe') {
             try {
-                const response = await axios.post('http://localhost:3001/order/stripe', { books: items, userId, token, address }, { headers: token });
+                const response = await axios.post(`${baseUrl}order/stripe`, { books: items, userId, token, address }, { headers: token });
                 if (response.data.success) {
                     window.location.replace(response.data.session_url);
                 }
@@ -35,7 +35,7 @@ export default function Checkout() {
             }
         } else {
             try {
-                const response = await axios.post('http://localhost:3001/order/cod', { books: items, userId, token, address });
+                const response = await axios.post(`${baseUrl}order/cod`, { books: items, userId, token, address });
                 if (response.data.success) {
                     toast(response.data.message);
                     navigate('/bookverse/orders');
