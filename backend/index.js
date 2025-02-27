@@ -12,7 +12,20 @@ const app = express();
 mongoose.connect('mongodb://localhost:27017/BookStore');
 
 app.use(express.json());
-app.use(cors());
+
+const allowedOrigins = [
+  "https://bookverse-jade.vercel.app", // Replace with your actual frontend Vercel URL
+  "http://localhost:3000" // Allow local development
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    credentials: true, // Allow cookies and authentication headers
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+  })
+);
 
 app.use('/auth', authRoutes);
 app.use('/cart', cartRoutes);
