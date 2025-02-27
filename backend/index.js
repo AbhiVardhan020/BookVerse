@@ -27,6 +27,8 @@ app.use(
   })
 );
 
+app.options("*", cors());
+
 app.use('/auth', authRoutes);
 app.use('/cart', cartRoutes);
 app.use('/order', orderRoutes);
