@@ -20,7 +20,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-    origin: "https://bookverse-jade.vercel.app/",
+    origin: "https://book-verse-sigma.vercel.app/",
     credentials: true, // Allow cookies and authentication headers
     methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
