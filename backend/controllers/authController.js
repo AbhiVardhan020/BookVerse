@@ -5,6 +5,8 @@ exports.register = async (req, res) => {
     try {
         const { name, username, password } = req.body.data;
         const exists = await UserModel.findOne({ username });
+
+        console.log(name, username)
         
         if (!exists) {
             const user = await UserModel.create({ name, username, password });

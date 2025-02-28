@@ -9,7 +9,7 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-mongoose.connect('mongodb://localhost:27017/BookStore');
+mongoose.connect('mongodb+srv://abhivardhan:abhivardhan@cluster0.vrhaf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
 
 app.use(express.json());
 app.use(cors());

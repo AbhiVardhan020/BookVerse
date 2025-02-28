@@ -27,11 +27,11 @@ export default function Register({baseUrl}) {
   const handleSubmit = async (e)=>{
     console.log(data)
     e.preventDefault()
-    axios.post(`${baseUrl}register`, {data})
+    axios.post(`${baseUrl}auth/register`, {data})
       .then(res=>{
         console.log(res.data)
         alert(res.data.message)
-        if(res.data.success) navigate('/login')
+        if(res.data.success) navigate('/bookverse/login')
       })
       .catch(err=>console.log(err))
   }
@@ -47,7 +47,7 @@ export default function Register({baseUrl}) {
 
         <div className="fs-5 text-start">Name</div>
         <input
-        name="username"
+        name="name"
         type="text"
         value={data.name}
         onChange={changeFxn}
