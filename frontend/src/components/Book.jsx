@@ -127,7 +127,11 @@ export default function Book({baseUrl}) {
             <input type="number" className="form-control w-15 me-3" style={{ width: '60px' }}
             value={quantity} onChange={handleQuantityChange} />
             <button className="btn btn-primary me-2" onClick={() => addToCart()}>Add to cart</button>
+<<<<<<< HEAD
             <button className="btn btn-warning text-white ms-3" onClick={() => navigate('/bookverse/checkout', {state: {items: [{...book, quantity, total: book.price*quantity}], totalCost: book.price*quantity}})}>Buy now</button>
+=======
+            <button className="btn btn-warning text-white ms-3" onClick={() => navigate('/bookverse/checkout', {state: {items: [{...book, quantity, total: quantity*book.price}], totalCost: book.price*quantity}})}>Buy now</button>
+>>>>>>> ab16407e5f12bd39be7d75426a4433e643419fc2
         </div>
         </div>
     </div>
