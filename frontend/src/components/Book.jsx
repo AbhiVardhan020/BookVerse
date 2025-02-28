@@ -127,11 +127,7 @@ export default function Book({baseUrl}) {
             <input type="number" className="form-control w-15 me-3" style={{ width: '60px' }}
             value={quantity} onChange={handleQuantityChange} />
             <button className="btn btn-primary me-2" onClick={() => addToCart()}>Add to cart</button>
-<<<<<<< HEAD
             <button className="btn btn-warning text-white ms-3" onClick={() => navigate('/bookverse/checkout', {state: {items: [{...book, quantity, total: book.price*quantity}], totalCost: book.price*quantity}})}>Buy now</button>
-=======
-            <button className="btn btn-warning text-white ms-3" onClick={() => navigate('/bookverse/checkout', {state: {items: [{...book, quantity, total: quantity*book.price}], totalCost: book.price*quantity}})}>Buy now</button>
->>>>>>> ab16407e5f12bd39be7d75426a4433e643419fc2
         </div>
         </div>
     </div>
@@ -139,30 +135,6 @@ export default function Book({baseUrl}) {
     <div className="h3 mt-4">Related Books</div>
     <div className="row justify-content-center">
         {authorBooks.map((item, i) => (
-        // <div 
-        //     className="card m-3 p-0 d-flex flex-column cursor-pointer shadow-sm" 
-        //     style={{ width: '15rem', minHeight: '30rem', backgroundColor: '#FCE8DD', border: 'none', borderRadius: '10px' }}
-        //     key={i}
-        // >
-        //     <div style={{ height: '20rem', overflow: 'hidden' }}>
-        //     <img 
-        //         src={item.image} 
-        //         className="card-img-top img-fluid" 
-        //         alt='' 
-        //         style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '10px 10px 0 0' }} 
-        //         onClick={() => navigate(`/bookverse/explore/${item.bookName}`, { state: { book: item } })}
-        //     />
-        //     </div>
-        //     <div className="card-body p-3 d-flex flex-column justify-content-between">
-        //     <div>
-        //         <div className="card-title fs-5 bookName fw-bold text-dark"> {item.bookName} </div>
-        //         <div className="card-title fs-6 authorName text-muted">By: {item.authorName} </div>
-        //     </div>
-        //     <div className="d-flex justify-content-between align-items-center mt-3">
-        //         <div className="card-title fs-4 col-auto fw-bold">Rs. {item.price}</div>
-        //     </div>
-        //     </div>
-        // </div>
         <div 
             className='card m-3 p-0 shadow-lg border-0 rounded-3 overflow-hidden book-card' 
             style={{ width: '16rem', minHeight: '30rem', backgroundColor: '#F5E6CC', transition: 'transform 0.3s ease' }}
