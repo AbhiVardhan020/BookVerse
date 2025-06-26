@@ -16,7 +16,7 @@ export default function AboutUs() {
             <div className='col-5 text-center mx-auto'>
                 Welcome to BookVerse, your ultimate online destination for books! Whether you're a passionate reader, a student, or someone looking for a perfect gift, we have something for everyone.
 
-                At BookVerse, we bediveve that books have the power to inspire, educate, and transform divves. That's why we offer a vast collection of titles across various genres, including fiction, non-fiction, academic, self-help, and more.
+                At BookVerse, we believe that books have the power to inspire, educate, and transform lives. That's why we offer a vast collection of titles across various genres, including fiction, non-fiction, academic, self-help, and more.
             </div>
             <div className='fs-4 mt-3 mb-2'>Why Choose Us?</div>
             <div className="container w-50">

@@ -7,7 +7,6 @@ export default function Register({baseUrl}) {
   const [data, setData] = React.useState({
     name: '',
     username: '',
-    email: '',
     password: ''
   })
 
