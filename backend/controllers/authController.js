@@ -26,6 +26,8 @@ exports.login = async (req, res) => {
         const { username, password } = req.body.data;
         const findUser = await UserModel.findOne({ username });
 
+        const temp  = await UserModel.find()
+        console.log(temp)
         if (!findUser) {
             return res.send({ success: false, message: 'No user exists' });
         }

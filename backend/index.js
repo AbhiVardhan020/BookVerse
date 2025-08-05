@@ -9,21 +9,20 @@ const orderRoutes = require('./routes/orderRoutes');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://abhivardhan:abhivardhan@cluster0.vrhaf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
+mongoose.connect(process.env.MONGO_URI);
+
+// mongoose.connect('mongodb://localhost:27017/BookStore')
 
 app.use(express.json());
 
-const allowedOrigins = [
-  "https://bookverse-jade.vercel.app", // Replace with your actual frontend Vercel URL
-  "http://localhost:3000" // Allow local development
-];
 
 app.use(
   cors({
     origin: "https://book-verse-sigma.vercel.app",
-    credentials: true, // Allow cookies and authentication headers
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    // origin: "http://localhost:3000",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 

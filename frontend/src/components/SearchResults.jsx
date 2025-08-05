@@ -8,7 +8,7 @@ export default function SearchResults() {
 
   const navigate = useNavigate()
   
-  const key = 'AIzaSyD_-GEPyqTOK05-rKvJ3SVtRdMI4EDvglU';
+  const key = process.env.REACT_APP_GBOOKS_API_KEY;
 
   const {input, selectValue} = useContext(UserContext)
 

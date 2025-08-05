@@ -1,7 +1,9 @@
 const Stripe = require('stripe');
 const OrderModel = require('../models/OrderModel');
 
-const key = 'sk_test_51Qt0fXCMVz0bhJcyJvcKnYRXMGXak4BdjnMsjAFV2A1Gjtm9xF00YOz0Lznzc8wBGsyC1Qy7iNG971bfZR645U4j00Su4rKWVC'
+require('dotenv').config(); 
+
+const key = process.env.STRIPE_SECRET_KEY;
 const stripe = new Stripe(key);
 
 exports.orderCOD = async (req, res) => {
